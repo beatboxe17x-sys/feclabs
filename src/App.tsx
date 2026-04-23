@@ -24,6 +24,7 @@ import Checkout from './components/Checkout'
 import LoadersPage from './components/LoadersPage'
 import AuthModal from './components/AuthModal'
 import WatermarkOverlay from './components/WatermarkOverlay'
+import Troubleshooter from './components/Troubleshooter'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -99,6 +100,7 @@ function AppShell() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/loaders" element={<LoadersPage />} />
+        <Route path="/troubleshooter" element={<Troubleshooter />} />
       </Routes>
     </div>
   )

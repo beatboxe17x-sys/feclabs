@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router'
-import { ShoppingCart, Menu, X, Download, LogOut, User } from 'lucide-react'
+import { ShoppingCart, Menu, X, Download, LogOut, User, Wrench } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 
@@ -63,6 +63,10 @@ export default function Navigation() {
             <button onClick={() => scrollTo('cheatmenu')} className="font-inter font-medium text-sm uppercase tracking-[0.08em] text-white/60 hover:text-cyan transition-colors">MENU</button>
             <button onClick={() => scrollTo('reviews')} className="font-inter font-medium text-sm uppercase tracking-[0.08em] text-white/60 hover:text-cyan transition-colors">REVIEWS</button>
             <button onClick={() => scrollTo('faq')} className="font-inter font-medium text-sm uppercase tracking-[0.08em] text-white/60 hover:text-cyan transition-colors">FAQ</button>
+            <button onClick={() => navigate('/troubleshooter')} className="font-inter font-medium text-sm uppercase tracking-[0.08em] text-white/60 hover:text-cyan transition-colors flex items-center gap-1.5">
+              <Wrench size={14} />
+              FIX
+            </button>
             {hasLoadersAccess && (
               <button onClick={() => navigate('/loaders')} className="font-inter font-medium text-sm uppercase tracking-[0.08em] text-cyan hover:text-white transition-colors flex items-center gap-1.5">
                 <Download size={14} />
@@ -110,6 +114,9 @@ export default function Navigation() {
               {id}
             </button>
           ))}
+          <button onClick={() => { setMobileOpen(false); navigate('/troubleshooter'); }} className="font-rajdhani font-bold text-3xl uppercase tracking-[0.1em] text-white/80 hover:text-cyan transition-colors flex items-center gap-2">
+            <Wrench size={24} /> FIX
+          </button>
           {hasLoadersAccess && (
             <button onClick={() => { setMobileOpen(false); navigate('/loaders'); }} className="font-rajdhani font-bold text-3xl uppercase tracking-[0.1em] text-cyan hover:text-white transition-colors flex items-center gap-2">
               <Download size={24} /> LOADERS
